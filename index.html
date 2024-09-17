@@ -1,57 +1,67 @@
 <!DOCTYPE html>
- <section class="cuisine-section">
-    <h3>Italian Cuisine</h3>
-    <p>Explore the rich and hearty dishes of Italian cuisine. <a href="italian.html">Learn more</a></p>
-</section>
-
-<section class="cuisine-section">
-    <h3>Japanese Cuisine</h3>
-    <p>Explore the delicate flavors of Japanese cuisine. <a href="japanese.html">Learn more</a></p>
-</section>
-
-<section class="cuisine-section">
-    <h3>Mexican Cuisine</h3>
-    <p>The bold flavors of Mexican food bring spice to your dining experience. <a href="mexican.html">Learn more</a></p>
-</section>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmonic Collection - Typography Hierarchy</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Harmonic Collection - Explore NYC's Cuisines</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h1>Harmonic Collection</h1>
-        <p>Discover the Diversity of New York City's Cuisines</p>
+        <p>Explore NYC’s Top Culinary Experiences</p>
     </header>
 
-    <main>
-        <section>
-            <h2>Typography Hierarchy Exploration</h2>
-            <p>In this entry, we will explore the various ways in which typographic hierarchy can be used to guide the user’s attention.</p>
-        </section>
+    <!-- Layout for Dishes -->
+    <section class="dish-layout">
+        <img src="images/bagel.jpg" id="bagelBtn" alt="Bagel" class="dish-img">
+        <img src="images/dumpling.jpg" id="dumplingBtn" alt="Dumplings" class="dish-img">
+        <img src="images/fries.jpg" id="friesBtn" alt="Fries" class="dish-img">
+        <img src="images/sushi.jpg" id="sushiBtn" alt="Sushi" class="dish-img">
+    </section>
 
-        <section class="cuisine-section">
-            <h3>Italian Cuisine</h3>
-            <p>Explore the rich and hearty dishes of Italian cuisine, ranging from traditional pasta to modern culinary interpretations.</p>
-        </section>
+    <!-- Bagel Modal -->
+    <div id="bagelModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Bagel</h2>
+            <p>Discover the classic New York bagel in all its glory.</p>
+            <img src="images/bagel.jpg" alt="Bagel Image" class="modal-img">
+        </div>
+    </div>
 
-        <section class="cuisine-section">
-            <h3>Japanese Cuisine</h3>
-            <p>Dive into the delicate flavors of Japanese cuisine, with sushi, sashimi, ramen, and tempura being some of the highlights.</p>
-        </section>
+    <!-- Dumpling Modal -->
+    <div id="dumplingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Dumplings</h2>
+            <p>Explore the rich flavors of dumplings served fresh from the kitchen.</p>
+            <img src="images/dumpling.jpg" alt="Dumpling Image" class="modal-img">
+        </div>
+    </div>
 
-        <section class="cuisine-section">
-            <h3>Mexican Cuisine</h3>
-            <p>The vibrant and bold flavors of Mexican food, from tacos to enchiladas, bring color and spice to your dining experience.</p>
-        </section>
-    </main>
+    <!-- Fries Modal -->
+    <div id="friesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fries</h2>
+            <p>Crispy fries with a side of adventure.</p>
+            <img src="images/fries.jpg" alt="Fries Image" class="modal-img">
+        </div>
+    </div>
 
-    <footer>
-        <p>© 2024 Harmonic Collection. All rights reserved.</p>
-    </footer>
-   
+    <!-- Sushi Modal -->
+    <div id="sushiModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sushi</h2>
+            <p>Delicate sushi rolls that melt in your mouth.</p>
+            <img src="images/sushi.jpg" alt="Sushi Image" class="modal-img">
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
 </body>
 </html>

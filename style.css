@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Arial", "Helvetica", "Verdana", sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom right, #C9E6CA, #348F50);
@@ -15,12 +15,14 @@ header h1 {
     margin: 0;
     font-weight: bold;
     letter-spacing: 2px;
+    font-family: "Georgia", "Times New Roman", serif;
 }
 
 header p {
     font-size: 1.2em;
     margin-top: 5px;
     letter-spacing: 1px;
+    font-family: "Verdana", "Geneva", sans-serif;
 }
 
 main {
@@ -38,17 +40,20 @@ h2 {
     font-size: 2em;
     margin-bottom: 15px;
     text-transform: uppercase;
+    font-family: "Courier New", "Courier", monospace;
 }
 
 h3 {
     font-size: 1.6em;
     color: #3B3B3B;
+    font-family: "Tahoma", "Geneva", sans-serif;
 }
 
 p {
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 1.1em;
+    font-family: "Verdana", "Geneva", sans-serif;
 }
 
 .cuisine-section {
@@ -60,5 +65,5 @@ footer {
     padding: 10px;
     font-size: 0.9em;
     color: #6F6F6F;
+    font-family: "Verdana", "Geneva", sans-serif;
 }
-

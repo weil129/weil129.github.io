@@ -1,0 +1,9 @@
+/* 图片全屏宽度样式 */
+.highlighted-image {
+    width: 100%; /* 设置图片宽度为网页宽度 */
+    height: auto; /* 高度自动调整，保持图片比例 */
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

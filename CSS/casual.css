@@ -1,0 +1,181 @@
+/* 悬停更换图片及放大 */
+.card-one {
+    width: 300px;
+    height: 400px;
+    cursor: pointer;
+    background: url('../IMG/IMG_0357.jpg') no-repeat;
+    background-size: 100% 100%;
+    transition-duration: 0.3s;
+}
+
+.card-one:hover {
+    background: url('../IMG/IMG_0357.png') no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.2s linear 0s;
+    transform: scale(1.1);
+}
+
+.card-two {
+    width: 300px;
+    height: 400px;
+    cursor: pointer;
+    background: url('../IMG/IMG_0354.jpg') no-repeat;
+    background-size: 100% 100%;
+    transition-duration: 0.3s;
+}
+
+.card-two:hover {
+    background: url('../IMG/IMG_0354.png') no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.2s linear 0s;
+    transform: scale(1.1);
+}
+
+.card-three {
+    width: 300px;
+    height: 400px;
+    cursor: pointer;
+    background: url('../IMG/IMG_0356.jpg') no-repeat;
+    background-size: 100% 100%;
+    transition-duration: 0.3s;
+}
+
+.card-three:hover {
+    background: url('../IMG/IMG_0356.png') no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.2s linear 0s;
+    transform: scale(1.1);
+}
+
+.card-four {
+    width: 300px;
+    height: 400px;
+    cursor: pointer;
+    background: url('../IMG/IMG_0358.jpg') no-repeat;
+    background-size: 100% 100%;
+    transition-duration: 0.3s;
+}
+
+.card-four:hover {
+    background: url('../IMG/IMG_0358.png') no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.2s linear 0s;
+    transform: scale(1.1);
+}
+
+/* 悬停隐藏 */
+.wrapper {
+    /* 弹性盒子以及边距 */
+    display: flex;
+    justify-content: center;
+    width: 1050px;
+    height: 450px;
+    border: 1px #fefefe solid;
+    border-radius: 10px;
+    margin: 80px auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.wrapper .card {
+    /* 过渡 */
+    transition: all 0.25s ease;
+    border-radius: 10px;
+}
+
+.wrapper>ul>li>a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.wrapper>ul>li>a:hover {
+    text-decoration: none;
+    color: pink;
+}
+
+.wrapper .card>span {
+    font-size: 38px;
+    line-height: 114vh;
+    font-family: 'subTitle';
+}
+
+.wrapper>ul:hover> :not(:hover) {
+    /* 隐藏模糊效果 */
+    filter: blur(5px);
+    opacity: 0;
+}
+
+/* 跑马灯 */
+.wrapper>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    height: 100%;
+    gap: 50px;
+    animation: marquee 10s linear infinite;
+}
+
+.wrapper>ul>li {
+    height: 100%;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.wrapper ul:hover {
+    /* 暂停 */
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    100% {
+        transform: translateX(-1050px);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    header {
+        float: left;
+        margin-left: 55px;
+        margin-top: 149px;
+        margin-bottom: 49px;
+    }
+
+    .sixzero {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .wrapper .card>span {
+        font-size: 22px;
+        line-height: 52vh;
+        font-family: 'subTitle';
+    }
+
+    .card-one,
+    .card-two,
+    .card-three,
+    .card-four {
+        width: 160px;
+        height: 226px;
+    }
+
+    .wrapper {
+        width: 400px;
+        height: 256px;
+    }
+
+    .wrapper>ul {
+        gap: 15px;
+    }
+
+    /* Adjust marquee animation */
+    @keyframes marquee {
+        100% {
+            transform: translateX(-300px);
+            /* Adjust based on new card size and number */
+        }
+    }
+}

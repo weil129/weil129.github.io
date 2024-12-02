@@ -1,0 +1,243 @@
+body::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 255, 0, 0.09);
+}
+
+.content-wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	margin-top: 30px;
+	padding: 20px;
+}
+
+/* 容器 */
+.person-wrap {
+	width: 500px;
+	transition: all 0.45s ease;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.person-wrap .person-pic {
+	display: block;
+	width: 100%;
+	transition: all 0.45s ease;
+	margin: 20px auto;
+}
+
+.person-wrap.animate {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 6;
+	height: auto;
+	background-color: #fff;
+	box-shadow: 0 0 10px #ccc;
+}
+
+.person-wrap.animate .person-pic {
+	width: 100%;
+	max-width: 800px;
+}
+
+.video-container {
+	/* width: 1280px; */
+	width: 1200px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin: 45px auto;
+}
+
+.video-container::after {
+	content: "";
+	display: block;
+	width: 100%;
+	padding-top: 45%;
+}
+
+.video-container iframe {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.star-container {
+	display: flex;
+	flex-direction: row;
+	/* 确保盒子横向排列 */
+	justify-content: space-around;
+	/* 盒子之间的间距 */
+	align-items: center;
+	gap: 20px;
+	/* 盒子之间的间隙 */
+	padding: 40px;
+	/* max-width: 1200px; */
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #1c1c1c;
+	/* 背景颜色 */
+	border-radius: 15px;
+}
+
+/* 星级样式调整 */
+.star-box {
+	width: 250px;
+	height: 250px;
+	background-color: #2e2e2e;
+	color: white;
+	border-radius: 20px;
+	text-align: center;
+	padding: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s ease;
+	text-decoration: none;
+}
+
+.star-box:hover {
+	transform: scale(1.05);
+}
+
+.star-rating {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.star-description {
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+.star-images {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	margin-top: 30px;
+}
+
+.star-images img {
+	width: 70px;
+	/* 调整宽度 */
+	height: 70px;
+	/* 调整高度 */
+}
+
+@media (max-width: 1320px) {
+
+	.star-container,
+	.video-container {
+		width: 90%;
+	}
+
+	.star-container {
+		gap: 0;
+		box-sizing: border-box;
+		align-items: stretch;
+	}
+
+	.star-box {
+		width: 22%;
+		margin-right: 3%;
+		height: auto;
+		padding: 10px 15px;
+	}
+
+	.star-box:last-child {
+		margin-right: 0;
+	}
+
+	.star-rating {
+		font-size: 20px;
+	}
+
+	.star-images img {
+		width: 50px;
+		height: auto;
+	}
+}
+
+@media (max-width: 992px) {
+	.star-container {
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.star-box {
+		margin-right: 0;
+		width: 42%;
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.star-container,
+	.video-container {
+		width: 100%;
+	}
+
+	.page-content {
+		padding-left: 20px;
+		padding-right: 20px;
+		box-sizing: border-box;
+	}
+}
+
+@media (max-width: 576px) {
+	.content-wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.star-box {
+		width: 96%;
+	}
+
+	.content-wrapper {
+		margin-top: 0;
+	}
+
+	.video-container {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.star-box {
+		width: 100%;
+	}
+
+	.star-container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.video-container::after {
+		padding-top: 75%;
+	}
+
+	/* 图片动画 */
+	.person-wrap {
+		width: 86%;
+	}
+
+	.person-wrap.animate .person-pic {
+		max-width: 86%;
+	}
+}
+
+footer {
+	padding: 40px;
+	font-size: 14px;
+	color: #fff;
+	background-color: #222;
+	text-align: center;
+}

@@ -1,0 +1,115 @@
+body::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(55, 118, 113, 0.3);
+}
+
+.content-two {
+    height: 629px;
+    width: 555px;
+    margin: 8vh auto;
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    position: relative;
+    background: transparent;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.Main-title {
+    font-family: 'title', sans-serif;
+    text-align: center;
+    font-weight: 400;
+    padding: 25px 0px;
+}
+
+.onform p {
+    text-align: center;
+    padding: 0px 5px;
+    font-family: 'subTitle', sans-serif;
+    font-size: 18px;
+}
+
+.onform p span {
+    text-decoration: underline;
+}
+
+.underform {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.field {
+    width: 80%;
+    padding: 0.4rem 1rem;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 0.98rem;
+    border-radius: 4px;
+}
+
+.field:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.underform>input::placeholder {
+    font-family: Georgia;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.underform>textarea {
+    padding-bottom: 8%;
+}
+
+.underform>textarea::placeholder {
+    font-family: Georgia;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.underform>label {
+    font-size: 12px;
+    font-family: Georgia;
+    float: left;
+    margin-left: 12%;
+    margin-top: 7px;
+}
+
+@media (max-width: 768px) {
+    .content-two {
+        width: 90%;
+        /* 在小屏幕上减小宽度 */
+        height: auto;
+        /* 高度自适应内容 */
+        margin: 10vh auto;
+        /* 调整垂直外边距 */
+    }
+
+    .Main-title {
+        font-size: 1.5rem;
+        /* 根据需要调整字体大小 */
+    }
+
+    .onform p {
+        font-size: 1.2rem;
+        /* 根据需要调整字体大小 */
+    }
+
+    .field {
+        width: 90%;
+        /* 在小屏幕上输入框占据更多宽度 */
+    }
+
+    .underform>label {
+        margin-left: 5%;
+        /* 调整标签的左外边距 */
+        font-size: 1rem;
+        /* 根据需要调整字体大小 */
+    }
+}

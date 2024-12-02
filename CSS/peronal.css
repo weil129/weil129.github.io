@@ -1,0 +1,90 @@
+/* 原始样式 */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 255, 255, 0.09);
+}
+
+.boxs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.boxs-one,
+.boxs-two {
+    display: inline-block;
+    width: 325px;
+    height: 405px;
+    color: rgb(92, 28, 28, 0.8);
+    background-color: rgb(228, 214, 176, 0.8);
+    margin: 2%;
+    text-decoration: none;
+    line-height: 30px;
+    padding-top: 167px;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.boxs-one:hover,
+.boxs-two:hover,
+.boxs-one:focus,
+.boxs-two:focus,
+.boxs-one:active,
+.boxs-two:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.boxs-one {
+    color: rgb(92, 28, 28, 0.8);
+    background-color: rgb(228, 214, 176, 0.8);
+}
+
+.boxs-one:hover {
+    color: rgb(228, 214, 176, 0.8);
+    background-color: rgb(92, 28, 28, 0.8);
+}
+
+.boxs-two {
+    color: rgb(228, 214, 176, 0.8);
+    background-color: rgb(92, 28, 28, 0.8);
+}
+
+.boxs-two:hover {
+    color: rgb(92, 28, 28, 0.8);
+    background-color: rgb(228, 214, 176, 0.8);
+}
+
+/* 媒体查询，用于小屏幕设备 */
+@media (max-width: 768px) {
+    .boxs {
+        flex-direction: column;
+        /* 垂直排列 */
+        align-items: flex-start;
+        /* 可以根据需要调整 */
+    }
+
+    .sixzero {
+        font-size: 28px;
+    }
+
+    .boxs-one,
+    .boxs-two {
+        width: 60%;
+        /* 或者其他适合小屏幕的宽度 */
+        margin: 5% auto;
+        /* 居中对齐并调整间距 */
+    }
+
+}

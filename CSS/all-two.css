@@ -1,0 +1,91 @@
+.flex-one {
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许子元素换行 */
+    margin-left: 249px;
+    margin-top: 149px;
+    margin-right: 10px;
+}
+
+.http-one iframe {
+    width: 600px;
+    /* 地图宽度适应容器 */
+    height: 450px;
+    /* 可以根据需要调整 */
+}
+
+.flex-two {
+    flex: 1;
+    /* 占据剩余空间 */
+    margin-left: 20px;
+    /* 在大屏幕下与地图保持间距 */
+}
+
+.img-one img {
+    width: 58%;
+    /* 图片宽度适应容器 */
+    height: auto;
+    /* 高度自动调整以保持比例 */
+    transition-duration: 0.3s;
+    border-radius: 20px;
+    border: 2px solid #fff;
+}
+
+.text-one {
+    font-size: 38px;
+    font-family: 'subTitle', sans-serif;
+    /* 确保subTitle字体可用，否则使用sans-serif作为后备 */
+    margin-top: 20px;
+    /* 调整与图片之间的间距 */
+    text-align: center;
+    /* 文本居中 */
+}
+
+.text-one>a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.text-one>a:hover {
+    color: pink;
+    text-decoration: underline;
+    transition: all 0.2s linear 0s;
+    transform: scale(0.9);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .flex-one {
+        flex-direction: column;
+        /* 垂直排列 */
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 25%;
+        /* 调整顶部外边距 */
+    }
+
+    .flex-two {
+        margin-left: 0;
+        /* 移除左侧外边距 */
+        margin-top: 10px;
+        /* 在地图下方添加间距 */
+    }
+
+    .http-one iframe,
+    .img-one img {
+        width: 100%;
+        /* 确保在小屏幕下宽度适应 */
+    }
+
+    .img-one img {
+        width: 80%;
+        border-radius: 20px;
+        border: 2px solid #fff;
+    }
+}
+
+/* 鼠标悬停效果 */
+.img-one img:hover {
+    transition: all 0.2s linear 0s;
+    transform: scale(0.9);
+}

@@ -1,0 +1,171 @@
+body::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(139, 0, 255, 0.09);
+}
+
+/* 大标题，调整margin-top | margin-bottom即可 */
+.info-title {
+	font-size: 28px;
+	text-align: center;
+	margin-top: 70px;
+	margin-bottom: 70px;
+	line-height: 1.7;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.infomation-box {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* 列表 */
+.info-list {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.info-item {
+	width: 18%;
+	margin-right: 2.5%;
+	position: relative;
+	text-decoration: none;
+	margin-bottom: 30px;
+}
+
+.info-item:hover {
+	text-decoration: none;
+}
+
+.info-item .num {
+	position: absolute;
+	left: 7%;
+	top: 5%;
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+}
+
+.pic {
+	width: 100%;
+	padding-top: 100%;
+	position: relative;
+	display: inline-block;
+}
+
+.pic img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	transition: all 0.35s ease;
+	object-fit: cover;
+}
+
+.pic .img-top {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+
+.pic:hover .img-top {
+	display: inline;
+}
+
+.info-item .pic:hover img {
+	transform: scale(1.05);
+}
+
+.info-item .pic:hover .img-top {
+	transform: scale(1.06);
+}
+
+.info-item:nth-child(5n) {
+	margin-right: 0;
+}
+
+.info-item .name {
+	font-size: 18px;
+	line-height: 30px;
+	text-align: center;
+	color: #000;
+	font-weight: bold;
+	/* margin-bottom: 10px; */
+	overflow-wrap: break-word;
+}
+
+.info-item .site {
+	font-size: 14px;
+	text-align: center;
+	color: #000;
+	font-weight: normal;
+	overflow-wrap: break-word;
+}
+
+@media (max-width: 1250px) {
+
+	.infomation-box,
+	.info-list,
+	.info-title {
+		width: 90%;
+	}
+}
+
+@media (max-width: 992px) {
+
+	.info-item,
+	.info-item:nth-child(5n) {
+		width: 30%;
+		margin-right: 3%;
+	}
+
+	.info-item:nth-child(3n) {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.infomation-box,
+	.info-list {
+		width: 100%;
+		padding-left: 20px;
+		padding-right: 20px;
+		box-sizing: border-box;
+	}
+
+	.info-list {
+		justify-content: space-between;
+	}
+
+	.info-item {
+		width: 47% !important;
+		margin-right: 0 !important;
+	}
+
+	.info-title {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		font-size: 24px;
+	}
+}
+
+footer {
+	padding: 40px;
+	font-size: 14px;
+	color: #fff;
+	background-color: #222;
+	text-align: center;
+}

@@ -1,0 +1,349 @@
+/* Page */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "title";
+    src: url(../FONT/title.ttf);
+}
+
+@font-face {
+    font-family: "subTitle";
+    src: url(../FONT/subTitle.otf);
+}
+
+@font-face {
+    font-family: "minFont";
+    src: url(../FONT/minFont.ttf);
+}
+
+@font-face {
+    font-family: "Georgia";
+    src: url(../FONT/Georgia.ttf);
+}
+
+html {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-image: url(../IMG/NewYorkCity_Zalkus_150dpi.webp);
+    line-height: 1.5em;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fefbf9;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    position: relative;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+/* Main */
+
+.main {
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition-property: transform;
+}
+
+.mask {
+    display: table-row;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition-property: opacity;
+}
+
+header {
+    /* background-color: #3498db; */
+    /* background-image: linear-gradient(to bottom, #3498db 0%, #217dbb 100%); */
+    /* padding: 50px; */
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 3em;
+    /* line-height: 1; */
+    /* text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); */
+    font-family: title;
+}
+
+.content {
+    margin: 50px 50px;
+    text-align: center;
+}
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background: #1d2127;
+    border-right: px solid #0f1114;
+    overflow: hidden;
+    transform: translate3d(-260px, 0, 0);
+    transition-property: transform;
+    will-change: transform, -webkit-transform;
+}
+
+.sidebar,
+.sidebar a {
+    color: #abb4be;
+}
+
+.nav {
+    margin-top: 100px;
+}
+
+.nav-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-title {
+    display: block;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #465162;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav-items>li>a {
+    font-family: subTitle;
+}
+
+.nav-link:hover {
+    background-color: #282d36;
+}
+
+/* .sidebar-separator {
+    margin: 30px;
+    height: 2px;
+    background-color: #000;
+    border-bottom: 1px solid #2b313a;
+} */
+
+/* Hamburger Icon */
+
+.hamburger {
+    display: block;
+    position: fixed;
+    left: 50px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    /* background-color: #3498db; */
+    border: 2px solid #ddd;
+    padding: 10px 7px;
+    width: 50px;
+    height: 46px;
+    transition-property: background-color, border-color;
+}
+
+.bar {
+    display: block;
+    position: relative;
+    background-color: #ddd;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    margin: 0 auto;
+    transition-property: transform, opacity, background-color, width;
+}
+
+.bar:first-child {
+    top: 0;
+}
+
+.bar:nth-child(2) {
+    opacity: 1;
+}
+
+.bar:last-child {
+    bottom: 0;
+}
+
+.hamburger:hover {
+    border-color: #fff;
+}
+
+.hamburger:hover .bar {
+    background-color: #fff;
+}
+
+.bar+.bar {
+    margin-top: 5px;
+}
+
+/* Animation */
+
+.main,
+.sidebar,
+.mask,
+.hamburger,
+.bar {
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(.694, .0482, .335, 1);
+}
+
+/* Show Sidebar */
+
+.show-sidebar .main {
+    transform: translate3d(260px, 0, 0);
+}
+
+.show-sidebar .sidebar {
+    transform: translate3d(0, 0, 0);
+}
+
+.show-sidebar .mask {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.show-sidebar .hamburger {
+    background-color: #282d36;
+    border-color: #0f1114;
+}
+
+.show-sidebar .bar {
+    background-color: #abb4be;
+}
+
+.show-sidebar .bar:first-child {
+    width: 120%;
+    transform: rotate(45deg) translate(5px, 8px);
+}
+
+.show-sidebar .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.show-sidebar .bar:last-child {
+    width: 120%;
+    transform: rotate(-45deg) translate(4px, -8px);
+}
+
+.nav-items>li>a {
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.nav-items>li>a:hover,
+.nav-items>li>a:focus,
+.nav-items>li>a:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.sixzero {
+    font-size: 60px;
+    line-height: 94px;
+    padding-top: 40px;
+}
+
+/* 字体定义保持不变 */
+
+@media (max-width: 768px) {
+    .sixzero {
+        font-size: 35px;
+    }
+
+    /* 针对小屏幕设备的样式调整 */
+    .sidebar {
+        transform: translate3d(-100%, 0, 0);
+        /* 完全隐藏侧边栏 */
+        width: 50%;
+        /* 侧边栏宽度调整为屏幕宽度的50% */
+    }
+
+    .show-sidebar .sidebar {
+        transform: translate3d(0, 0, 0);
+        /* 显示侧边栏 */
+    }
+
+    .show-sidebar .main {
+        transform: translate3d(50%, 0, 0);
+        /* 主内容向右移动，留出侧边栏空间 */
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        /* 减小标题字体以适应小屏幕 */
+    }
+
+    .content {
+        margin: 20px;
+        /* 减小内容边距 */
+    }
+
+    .hamburger {
+        left: 20px;
+        /* 调整汉堡菜单位置 */
+        top: 10px;
+    }
+
+    .nav-link,
+    .nav-title {
+        padding: 10px 20px;
+        /* 调整链接和内边距以适应小屏幕 */
+    }
+}
